@@ -1,0 +1,164 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary;
+  background-color: $accent-orange;
+  min-height: 100vh;
+  min-width: 100vw;
+  @include flex-center;
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background-color: $accent-dark-grey;
+  margin: 20px 0px;
+}
+
+.btn-back-action {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+
+  img {
+    width: 15px;
+  }
+
+  span {
+    color: black;
+  }
+
+  &.floating-btn-header {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+  }
+}
+
+// Form ---------------
+.step-three {
+  height: 100%;
+  text-align: left;
+
+  .btn-back-action {
+    margin-top: 50px;
+  }
+}
+
+.step-two {
+  height: 100%;
+  overflow-y: auto;
+
+  .ctr-shipping {
+    margin-bottom: 60px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+}
+
+.ctr-form-input {
+  display: flex;
+  padding: 25px 0px;
+  height: 84%;
+
+  .ctr-input {
+    width: 70%;
+  }
+
+  .ctr-summary {
+    border-left: 1px solid $primary;
+    width: 30%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+    .summary-title {
+      height: 100%;
+    }
+
+    .summary-shipment-detail {
+      color: $accent-green;
+      font-weight: 700;
+    }
+  }
+}
+
+// --------------------
+
+#ctr-form {
+  background-color: $accent-light;
+  position: relative;
+  width: 90vw;
+  height: 80vh;
+  border-radius: 4px;
+  box-shadow: 1px 1px 20px rgba($primary, 0.2);
+  color: black;
+  font-size: 16px;
+
+  .stepper-outer {
+    @include flex-center;
+    margin-top: -35px;
+  }
+}
+
+@media (max-width: 500px) {
+  #app {
+    align-items: flex-start;
+  }
+  
+  #ctr-form {
+    height: 100%;
+    .stepper-outer {
+      margin-top: 0px !important;
+    }
+  }
+
+  .floating-btn-header {
+    left: 20px !important;
+    top: 80px !important;
+  }
+
+  .ctr-shipping {
+    margin-top: 20px !important;
+  }
+
+  .flex-grid {
+    flex-direction: column !important;
+  }
+
+  .container {
+    padding: 0px !important;
+  }
+
+  .ctr-input {
+    width: 100% !important;
+  }
+
+  .ctr-summary {
+    margin-top: 24px;
+    border-left: none !important;
+    width: 100% !important;
+  }
+
+  .ctr-form-input {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .ctr-selected-box {
+    width: 100% !important;
+  }
+  .flex-wrap {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .title-container {
+    &.last {
+      justify-content: flex-start;
+    }
+  }
+}
